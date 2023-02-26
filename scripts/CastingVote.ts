@@ -9,7 +9,7 @@ async function main() {
   const args = process.argv;
   const contractAddress = args.slice(2)?.[0]; 
   const proposalIndex = args.slice(2)?.[1];
-  console.log(proposalIndex)
+  // console.log(proposalIndex)
   if (proposalIndex.length <= 0) throw new Error ("Missing parameters: address");
 
 
@@ -27,8 +27,8 @@ async function main() {
   // attaching the contract to the deployed network
    const ballotContract = await ballotContractFactory.attach(contractAddress);
     const txId =  await (await ballotContract.vote(proposalIndex)).wait();
-    console.log(txId);
-    console.log(`This address has been given the right to vote ${proposalIndex} `)
+    // console.log(txId);
+    console.log(`Your vote counts ${proposalIndex} `)
 }
 
 

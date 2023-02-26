@@ -51,14 +51,14 @@ async function main() {
         const wallet = new ethers.Wallet(privateKey)
       
         // console.log(wallet)
-        console.log(`Tutu wallet address ${wallet.address}`);
+        // console.log(`Tutu wallet address ${wallet.address}`);
 
         // this is going to setup my wallet, create a signer by connecting the wallet to the provider 
         const signer =wallet.connect(provider);
 
         // checking the balance of the signer
           const balance = await signer.getBalance();
-         console.log(`wallet balance : ${balance} wei`);
+        //  console.log(`wallet balance : ${balance} wei`);
     // const lastBlock = await provider.getBlock("latest");
     // console.log({lastBlock})
 // the above flow is creating a random wallet, to bring your own environment here, use the .ENV package
@@ -66,7 +66,7 @@ async function main() {
 
 
   proposals.forEach((element, index) => {
-    console.log(`Proposal N. ${index + 1}: ${element}`);
+    // console.log(`Proposal N. ${index + 1}: ${element}`);
   });
   // TODO
 //   copied from ballot.ts
@@ -88,7 +88,7 @@ async function main() {
    console.log({deployTxReceipt})
 
  const chairPerson = await ballotContract.chairperson();
- console.log(chairPerson)
+//  console.log(chairPerson)
 }
 
 
