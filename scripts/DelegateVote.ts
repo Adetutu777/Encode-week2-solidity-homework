@@ -11,7 +11,6 @@ async function main() {
   const delegateVote = args.slice(2)?.[1];
   if (delegateVote.length <= 0) throw new Error ("Missing address: address");
 
-
     // this flow below sets up a provider
     const provider = ethers.getDefaultProvider("goerli");
         // to validate privatKey
@@ -25,6 +24,8 @@ async function main() {
 
   // attaching the contract to the deployed network
    const ballotContract = await ballotContractFactory.attach(contractAddress);
+  //  const voterWeight = await ballotContract.voters("0x4088edFa1ab3792b4Ec3B8fafaC0C20aDd364609")
+  //  console.log((voterWeight.weight).toString());
     const txId =  await (await ballotContract.delegate(delegateVote)).wait();
     console.log(txId);
     console.log(`Vote has been delegated to ${delegateVote} `)

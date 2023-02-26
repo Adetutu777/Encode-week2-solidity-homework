@@ -9,7 +9,7 @@ async function main() {
   const args = process.argv;
   const contractAddress = args.slice(2)?.[0]; 
   const voterAddress = args.slice(2)?.[1];
-  console.log(voterAddress)
+  // console.log(voterAddress)
   if (voterAddress.length <= 0) throw new Error ("Missing parameters: address");
 
 
